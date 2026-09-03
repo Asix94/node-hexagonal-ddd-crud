@@ -1,7 +1,9 @@
+/// <reference types="node" />
+
 import assert from "node:assert";
 import { describe, it } from "node:test";
 
-import { invalidUserId } from "../../../src/user/domain/exepctions/invalidUserId.js";
+import { InvalidUserId } from "../../../src/user/domain/exceptions/invalidUserId.js";
 import { UserId } from "../../../src/user/domain/userId.js";
 
 describe("UserId", () => {
@@ -14,7 +16,10 @@ describe("UserId", () => {
     });
 
     it("rejects an invalid UUID", () => {
-        assert.throws(() => UserId.fromString("invalid-uuid"), invalidUserId);
+        assert.throws(
+            () => UserId.fromString("invalid-uuid"),
+            InvalidUserId
+        );
     });
 
     it("generates a UUID version 4", () => {

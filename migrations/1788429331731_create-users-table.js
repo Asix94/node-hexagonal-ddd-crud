@@ -1,5 +1,3 @@
-import { type } from 'node:os';
-
 /**
  * @type {import('node-pg-migrate').ColumnDefinitions | undefined}
  */
@@ -30,7 +28,7 @@ export const up = (pgm) => {
             notNull: true,
             unique: true
         }
-    })
+    });
 };
 
 /**
@@ -39,6 +37,5 @@ export const up = (pgm) => {
  * @returns {Promise<void> | void}
  */
 export const down = (pgm) => {
-    pgm.dropTable("users")
-
+    pgm.dropTable("users");
 };
