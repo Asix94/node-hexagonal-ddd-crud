@@ -1,6 +1,6 @@
 /// <reference types="node" />
 
-import assert from 'node:assert';
+import { strict as assert } from "node:assert";
 import { describe, it } from 'node:test';
 
 import { Email } from '../../../src/user/domain/email.js';
